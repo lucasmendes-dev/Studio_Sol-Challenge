@@ -55,17 +55,26 @@ or
 </ul>
 
 <h1>Examples of use</h1>
-<p>Verify if the password "TesteSenhaForte!123&" meets the configured security rules:</p>
+<h3>Using Postman</h3>
+<p>In order to test the API you can use a software called Postman, to manage your HTTP requests.</p>
 
-curl -d '{"password": "TesteSenhaForte!123&", "rules": [{"rule": "minSize","value": "8"},{"rule": "minSpecialChars","value": "2"},{"rule": "noRepeted","value": "0"},{"rule": "minDigit","value": "4"}]}' -H "Content-Type: application/json" -X POST http://localhost:8080/verify
+<h5>Steps:</h5>
+<ul>
+    <li>Run the python script on this repository (app.py) to turn on the flask server;</li>
+    <li>Open the Postman in your computer;</li>
+    <li>In the search bar, write the Endpoint from the API (http://localhost:8080/verify) using "POST" method.</li>  
+</ul>
 
-<p>Output:</p>
+![path do post](https://user-images.githubusercontent.com/106750716/214943318-bd3ed9b4-8872-4c54-8329-c37f396f2567.png)
 
-![output1](https://user-images.githubusercontent.com/106750716/214899366-c1399c88-bfa0-4393-94d2-5660e3880361.png)
+<ul>
+    <li>On Postman, select in the 'Body' tab the option 'raw' and write down your Json Input. </li>
+</ul>
 
-<p>Verify if the password "Senha1" meets the configured security rules:</p>
+![json input](https://user-images.githubusercontent.com/106750716/214944020-f64db052-1644-49f6-85b1-e580b9c6e70b.png)
 
-curl -d '{"password": "Senha1", "rules": [{"rule": "minSize","value": "8"},{"rule": "minSpecialChars","value": "2"},{"rule": "noRepeted","value": "0"},{"rule": "minDigit","value": "1"}]}' -H "Content-Type: application/json" -X POST http://localhost:8080/verify
-Output:
+<ul>
+    <li>To finish, click on "Send" button and it will show the API's output.</li>
+</ul>
 
-![output12](https://user-images.githubusercontent.com/106750716/214899409-bb4d53c4-5c5f-4b4a-b6d4-86e26d7443d8.png)
+![ultimo](https://user-images.githubusercontent.com/106750716/214944719-b39b22c7-a650-47b3-af92-ba3cd5050364.png)
