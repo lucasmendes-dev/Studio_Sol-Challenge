@@ -14,79 +14,58 @@ There are no rate limits configured for this API.
 <p><b>URL:</b> http://localhost:8080/verify</p>
 <p><b>Method:</b> POST </p>
 <p><b>Input:</b></p>
-{
-    "password": "TesteSenhaForte!123&",
-    "rules": [
-        {"rule": "minSize","value": "8"},
-        {"rule": "minSpecialChars","value": "2"},
-        {"rule": "noRepeted","value": "0"},
-        {"rule": "minDigit","value": "4"}
-    ]
-}
+
+![input1](https://user-images.githubusercontent.com/106750716/214899333-0fb8228a-a30c-4290-8e9e-222827f9e8a1.png)
+
 Output:
-{
-    "verify": "True",
-    "noMatch": []
-}
+
+![output1](https://user-images.githubusercontent.com/106750716/214899366-c1399c88-bfa0-4393-94d2-5660e3880361.png)
 
 or
 
-{
-    "verify": "False",
-    "noMatch": ["minSize", "minSpecialChars"]
-}
+![output12](https://user-images.githubusercontent.com/106750716/214899409-bb4d53c4-5c5f-4b4a-b6d4-86e26d7443d8.png)
 
 <b>Obs:</b> You can choose only the rules you want, there's no need to choose all of them, but at least 1 rule and the 'password' is mandatory.
 
 Input:
-{
-    "password": "TesteSenhaForte!123&",
-    "rules": [
-        {"rule": "minUppercase","value": "1"}
-    ]
-}
+
+![input2](https://user-images.githubusercontent.com/106750716/214899448-51184720-6c20-41d5-90a5-71690280ee5c.png)
+
 Output:
-{
-    "verify": "True",
-    "noMatch": []
-}
+
+![output2](https://user-images.githubusercontent.com/106750716/214899495-a5ad8cdc-c9a9-4947-b430-e02e45c990dc.png)
+
 or
 
-{
-    "verify": "False",
-    "noMatch": ["minUppercase"]
-}
+![out3](https://user-images.githubusercontent.com/106750716/214899525-ab7dc560-2b88-40b8-b820-0975bee7238f.png)
 
-Return code:
-200 OK: The password meets the configured security rules
-400 Bad Request: The request is missing all the required parameters or the values are invalid
+<p><b>Return code:</b></p>
+<p>200 OK: The password meets the configured security rules</p>
+<p>400 Bad Request: The request is missing all the required parameters or the values are invalid</p>
 
 
-<h1>Security rules</h1>
-minSize: The password size should be at least the specified value
-minUppercase: The password should contain at least the specified number of uppercase characters
-minLowercase: The password should contain at least the specified number of lowercase characters
-minDigit: The password should contain at least the specified number of digits
-minSpecialChars: The password should contain at least the specified number of special characters
-noRepeted: The password should not contain consecutive repeating characters
+<h1>Security rules / Methods</h1>
+<ul>
+    <li>minSize: The password size should be at least the specified value</li>
+    <li>minUppercase: The password should contain at least the specified number of uppercase characters</li>
+    <li>minLowercase: The password should contain at least the specified number of lowercase characters</li>
+    <li>minDigit: The password should contain at least the specified number of digits</li>
+    <li>minSpecialChars: The password should contain at least the specified number of special characters</li>
+    <li>noRepeted: The password should not contain consecutive repeating characters</li>
+</ul>
 
 <h1>Examples of use</h1>
-Verify if the password "TesteSenhaForte!123&" meets the configured security rules
+<p>Verify if the password "TesteSenhaForte!123&" meets the configured security rules:</p>
 
 curl -d '{"password": "TesteSenhaForte!123&", "rules": [{"rule": "minSize","value": "8"},{"rule": "minSpecialChars","value": "2"},{"rule": "noRepeted","value": "0"},{"rule": "minDigit","value": "4"}]}' -H "Content-Type: application/json" -X POST http://localhost:8080/verify
+
+<p>Output:</p>
+
+![output1](https://user-images.githubusercontent.com/106750716/214899366-c1399c88-bfa0-4393-94d2-5660e3880361.png)
+
+<p>Verify if the password "Senha1" meets the configured security rules:</p>
+
+curl -d '{"password": "Senha1", "rules": [{"rule": "minSize","value": "8"},{"rule": "minSpecialChars","value": "2"},{"rule": "noRepeted","value": "0"},{"rule": "minDigit","value": "1"}]}' -H "Content-Type: application/json" -X POST http://localhost:8080/verify
 Output:
 
-{
-    "verify": "True",
-    "noMatch": []
-}
-
-Verify if the password "TesteSenhaFraca" meets the configured security rules
-
-curl -d '{"password": "TesteSenhaFraca", "rules": [{"rule": "minSize","value": "8"},{"rule": "minSpecialChars","value": "2"},{"rule": "noRepeted","value": "0"},{"rule": "minDigit","value": "4"}]}' -H "Content-Type: application/json" -X POST http://localhost:8080/verify
-Output:
-
-{
-    "verify": "False",
-    "noMatch": ["minSize", "minSpecialChars", "minDigit"]
-}
+![output12](https://user-images.githubusercontent.com/106750716/214899409-bb4d53c4-5c5f-4b4a-b6d4-86e26d7443d8.png)
