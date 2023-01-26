@@ -25,7 +25,7 @@ or
 
 ![output12](https://user-images.githubusercontent.com/106750716/214899409-bb4d53c4-5c5f-4b4a-b6d4-86e26d7443d8.png)
 
-<b>Obs:</b> You can choose only the rules you want, there's no need to choose all of them, but at least 1 rule and the 'password' is mandatory.
+<b>Obs:</b> You can choose the rules you want, there's no need to choose all of them, but at least 1 rule and the 'password' is mandatory.
 
 Input:
 
@@ -46,12 +46,12 @@ or
 
 <h1>Security rules / Methods</h1>
 <ul>
-    <li>minSize: The password size should be at least the specified value</li>
-    <li>minUppercase: The password should contain at least the specified number of uppercase characters</li>
-    <li>minLowercase: The password should contain at least the specified number of lowercase characters</li>
-    <li>minDigit: The password should contain at least the specified number of digits</li>
-    <li>minSpecialChars: The password should contain at least the specified number of special characters</li>
-    <li>noRepeted: The password should not contain consecutive repeating characters</li>
+    <li><b>minSize:</b> The password size should be at least the specified value</li>
+    <li><b>minUppercase:</b> The password should contain at least the specified number of uppercase characters</li>
+    <li><b>minLowercase:</b> The password should contain at least the specified number of lowercase characters</li>
+    <li><b>minDigit:</b> The password should contain at least the specified number of digits</li>
+    <li><b>minSpecialChars:</b> The password should contain at least the specified number of special characters</li>
+    <li><b>noRepeted:</b> The password should not contain consecutive repeating characters</li>
 </ul>
 
 <h1>Examples of use</h1>
