@@ -1,0 +1,23 @@
+How I implemented the logic for this API:
+
+1- I wrote the functions with the rules to validate the password. Each one returns 'True' or 'False' according to 
+the password received in the parameters (password), along with the value (rule), to define if the input is valid or not;
+
+2- I created a dictionary with the names of each function to use in the endpoint when the user runs the API;
+
+3- I created the http://localhost:8080/verify route for the Endpoint, using the "POST" method;
+    3.1 In this Endpoint the INPUT value (password) and which functions/rules will be executed (rules_conditions) are defined;
+    3.2 An iteration is done for each rule and the function of each one is executed, passing the necessary parameters;
+    3.3 If the function returns "False" it is added to the "noMatch" array, all functions that have the return value 
+    equal to "False" will be added;
+
+4- In the end, a map in JSON format containing two keys, "verify" and "noMatch" is returned.
+    4.1 If there was any "False" value added to the noMatch array (item 3.3) the "noMatch" key of this return 
+    will contain the added items, and the "verify" key will be "False";
+    4.2 If no value was added in item 3.3, the return will have the value "True" in the "verify" key and an empty list 
+    in the "noMatch" array;
+
+5- At the end of the file (app.py) there is the command to run the Flask server and then test the Input submission to the API. 
+On the http://localhost:8080/verify endpoint.
+
+

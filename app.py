@@ -1,7 +1,9 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request   #Type 'pip install Flask' if you don't have Flask on your PC.
 
 app = Flask(__name__)
 
+
+#Functions to validade the password
 def minSize(password, rule):
     return len(password) >= rule        
 
@@ -24,7 +26,7 @@ def noRepeted(password, rule):
             return False
     return True
 
-
+#Dict to name each function and use it inside the Endpoint
 rules = {
     "minSize": minSize,
     "minUppercase": minUppercase,
@@ -34,7 +36,7 @@ rules = {
     "noRepeted": noRepeted
 }
 
-
+#Endpoint 
 @app.route('/verify', methods=['POST'])
 def VerifyPassword():    
     conditions = request.get_json()
@@ -56,5 +58,5 @@ def VerifyPassword():
         }
     ), 200
 
-
+#running Flask server
 app.run(port=8080,host='localhost',debug=True)
