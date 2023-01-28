@@ -1,11 +1,11 @@
 <h1>Overview</h1>
-The password verification API is a REST API that checks if a password meets a series of security rules. The rules include minimum size, special characters, numbers, uppercase and lowercase letters, and non-repeating characters.
+The password verification is made by an API REST that checks if a password meets a series of security rules. The rules include minimum size, special characters, numbers, uppercase and lowercase letters, and non-repeating characters.
 
 <h1>Authentication</h1>
-Authentication is not required to use this API.
+Authentication is not required.
 
 <h1>Rate Limits</h1>
-There are no rate limits configured for this API.
+There are no rate limits configured.
 
 <h1>EndPoints</h1>
 <h3>Verify Password</h3>
@@ -25,7 +25,8 @@ or
 
 ![output12](https://user-images.githubusercontent.com/106750716/214899409-bb4d53c4-5c5f-4b4a-b6d4-86e26d7443d8.png)
 
-<b>Obs:</b> You can choose the rules you want, there's no need to choose all of them, but at least 1 rule and the 'password' is mandatory.
+<h3>Parameters</h3>
+<p>You can choose the rules you want, there's no need to choose all of them, but at least 1 rule and the 'password' is mandatory.</p>
 
 Input:
 
@@ -45,6 +46,7 @@ or
 
 
 <h1>Security rules / Methods</h1>
+<h4> Definition of each method:</h4>
 <ul>
     <li><b>minSize:</b> The password size should be at least the specified value</li>
     <li><b>minUppercase:</b> The password should contain at least the specified number of uppercase characters</li>
