@@ -1,9 +1,9 @@
 How I implemented the logic for this API:
 
-1- I wrote the functions with the rules to validate the password. Each one returns 'True' or 'False' according to 
+1- I wrote the methods with the rules to validate the password (methods.py file). Each one returns 'True' or 'False' according to 
 the password received in the parameters (password), along with the value (rule), to define if the input is valid or not;
 
-2- I created a dictionary with the names of each function to use in the endpoint when the user runs the API;
+2- I created a dictionary with the names of each method (constants.py file) to use in the endpoint when the user runs the API;
 
 3- I created the http://localhost:8080/verify route for the Endpoint, using the "POST" method;
     3.1 In this Endpoint the INPUT value (password) and which functions/rules will be executed (rules_conditions) are defined;
